@@ -37,7 +37,7 @@ echo "THIS IS PORT"
 echo $PORT
 # if files have been shared using shared volumes, make sure the ownership of the
 # /usr/lib/supertokens files still remains with supertokens user
-chown -R supertokens /usr/lib/supertokens/
+# chown -R supertokens /usr/lib/supertokens/
 
 if [ "$CONFIG_HASH" = "$CONFIG_MD5SUM" ]
 then
