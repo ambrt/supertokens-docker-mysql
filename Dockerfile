@@ -37,4 +37,4 @@ RUN echo "$(md5sum /usr/lib/supertokens/config.yaml | awk '{ print $1 }')" >> /C
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 EXPOSE 3567
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["supertokens", "start"]
+CMD ["supertokens", "start","--port",$PORT]
