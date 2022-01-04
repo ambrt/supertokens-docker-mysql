@@ -23,17 +23,18 @@ error_log() {
 # if command starts with an option, prepend supertokens start
 if [ "${1}" = 'dev' -o "${1}" = "production" -o "${1:0:2}" = "--" ]; then
     # set -- supertokens start "$@"
-    set -- supertokens start "$@" --port=$PORT
+    set -- supertokens start "$@" 
     # check if --foreground option is passed or not
     if [[ "$*" != *--foreground* ]]
     then
         set -- "$@" --foreground
     fi
 fi
-
+SUPERTOKENS_PORT=$PORT
 CONFIG_FILE=/usr/lib/supertokens/config.yaml
 CONFIG_MD5SUM="$(md5sum /usr/lib/supertokens/config.yaml | awk '{ print $1 }')"
-
+echo "THIS IS PORT"
+echo $PORT
 # if files have been shared using shared volumes, make sure the ownership of the
 # /usr/lib/supertokens files still remains with supertokens user
 # chown -R supertokens:supertokens /usr/lib/supertokens/
