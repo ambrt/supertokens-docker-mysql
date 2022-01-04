@@ -23,7 +23,7 @@ error_log() {
 # if command starts with an option, prepend supertokens start
 if [ "${1}" = 'dev' -o "${1}" = "production" -o "${1:0:2}" = "--" ]; then
     # set -- supertokens start "$@"
-    set -- supertokens start "$@"
+    set -- supertokens start "$@" --port=$PORT
     # check if --foreground option is passed or not
     if [[ "$*" != *--foreground* ]]
     then
