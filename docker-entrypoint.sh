@@ -36,7 +36,8 @@ CONFIG_MD5SUM="$(md5sum /usr/lib/supertokens/config.yaml | awk '{ print $1 }')"
 
 # if files have been shared using shared volumes, make sure the ownership of the
 # /usr/lib/supertokens files still remains with supertokens user
-chown -R supertokens:supertokens /usr/lib/supertokens/
+#ls -l 
+# chown -R supertokens:supertokens /usr/lib/supertokens/
 
 if [ "$CONFIG_HASH" = "$CONFIG_MD5SUM" ]
 then
@@ -51,7 +52,7 @@ then
     
     # verify mysql user name is passed
     if [ ! -z $MYSQL_USER ]
-    then
+    thenchown r invalud user
         echo "mysql_user: $MYSQL_USER" >> $CONFIG_FILE
     fi
 
